@@ -254,7 +254,7 @@ function buildGallery() {
       setImg(0, true);
       cycleTimer = setInterval(() => {
         setImg((currentIdx + 1) % images.length, true);
-      }, 750);
+      }, 1600);
     });
 
     card.addEventListener('mouseleave', () => {
