@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IB Premium Art – Градежна Компанија | Скопје, Македонија</title>
-  <meta name="description" content="IB Premium Art – Специјалисти за Knauf, Rigips, Tehnogips системи, Armstrong и Hunter Douglas плафони, молерај, глетување и кречење во Скопје, Македонија. Од 2018 година со квалитет на највисоко ниво." />
+  <meta name="description" content="IB Premium Art – Специјалисти за Knauf, Rigips, Tehnogips системи, Armstrong и Hunter Douglas плафони, молерај, глетување и кречење во Скопје, Македонија. Од 2018 година." />
   <meta property="og:title" content="IB Premium Art – Градежна Компанија" />
   <meta property="og:description" content="Knauf, Rigips, Armstrong, Hunter Douglas плафони, молерај и кречење. Скопје, Македонија." />
   <meta property="og:image" content="Assets/Home/9.jpg" />
@@ -23,16 +23,14 @@
         <img src="Assets/logo.JPG" alt="IB Premium Art лого" class="logo-img" />
         <span class="logo-text">IB Premium Art</span>
       </a>
-
       <button class="nav-toggle" id="navToggle" aria-label="Отвори мени" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
-
       <ul class="nav-links" id="navMenu" role="list">
-        <li><a href="#about" class="nav-link" data-mk="За нас" data-en="About">За нас</a></li>
-        <li><a href="#services" class="nav-link" data-mk="Услуги" data-en="Services">Услуги</a></li>
-        <li><a href="#gallery" class="nav-link" data-mk="Галерија" data-en="Gallery">Галерија</a></li>
-        <li><a href="#contact" class="nav-link" data-mk="Контакт" data-en="Contact">Контакт</a></li>
+        <li><a href="#about"    class="nav-link" data-mk="За нас"    data-en="About">За нас</a></li>
+        <li><a href="#services" class="nav-link" data-mk="Услуги"   data-en="Services">Услуги</a></li>
+        <li><a href="#gallery"  class="nav-link" data-mk="Галерија" data-en="Gallery">Галерија</a></li>
+        <li><a href="#contact"  class="nav-link" data-mk="Контакт"  data-en="Contact">Контакт</a></li>
         <li>
           <button class="lang-btn" id="langBtn" aria-label="Смени јазик / Change language">
             <span class="lang-flag">🇲🇰</span>
@@ -50,12 +48,25 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tagline" data-mk="Од 2018 – Квалитет без компромис" data-en="Since 2018 – Quality Without Compromise">Од 2018 – Квалитет без компромис</p>
-      <h1 class="hero-title" data-mk="Совршенство во секој детаљ" data-en="Excellence in Every Detail">Совршенство<br><span class="hero-accent">во секој детаљ</span></h1>
-      <p class="hero-sub" data-mk="Специјалисти за суви градби, плафони, молерај и finishing работи во Скопје и Македонија" data-en="Specialists in dry construction, ceilings, painting & finishing works in Skopje and North Macedonia">Специјалисти за суви градби, плафони, молерај и finishing работи во Скопје и Македонија</p>
+      <p class="hero-tagline"
+         data-mk="Од 2018 – Квалитет без компромис"
+         data-en="Since 2018 – Quality Without Compromise">Од 2018 – Квалитет без компромис</p>
+
+      <h1 class="hero-title" data-html="true"
+          data-mk="Каде завршува ѕидот,<br><span class='hero-accent'>почнува убавината</span>"
+          data-en="Where the Wall Ends,<br><span class='hero-accent'>Beauty Begins</span>">
+        Каде завршува ѕидот,<br><span class="hero-accent">почнува убавината</span>
+      </h1>
+
+      <p class="hero-sub"
+         data-mk="Суви системи, Armstrong и Hunter Douglas плафони, молерај и финишерски работи – изработени со мајсторска прецизност и уметничка посветеност, низ целата Македонија."
+         data-en="Dry systems, Armstrong & Hunter Douglas ceilings, painting and finishing works – crafted with master precision and an artist's dedication, across North Macedonia.">
+        Суви системи, Armstrong и Hunter Douglas плафони, молерај и финишерски работи – изработени со мајсторска прецизност и уметничка посветеност, низ целата Македонија.
+      </p>
+
       <div class="hero-cta-group">
         <a href="#gallery" class="btn btn-primary" data-mk="Погледни работи" data-en="View Our Work">Погледни работи</a>
-        <a href="#contact" class="btn btn-ghost" data-mk="Контактирај нè" data-en="Contact Us">Контактирај нè</a>
+        <a href="#contact" class="btn btn-ghost"   data-mk="Контактирај нè"  data-en="Contact Us">Контактирај нè</a>
       </div>
     </div>
     <div class="hero-scroll-indicator" aria-hidden="true">
@@ -69,11 +80,19 @@
       <div class="section-label" data-mk="За нас" data-en="About Us">За нас</div>
       <div class="about-grid">
         <div class="about-text">
-          <h2 class="section-title" data-mk="Градиме со страст,<br>работиме со прецизност" data-en="We Build with Passion,<br>Work with Precision">Градиме со страст,<br>работиме со прецизност</h2>
-          <p class="about-desc" data-mk="IB Premium Art е градежна компанија со седиште во с. Стајковци, Скопје, основана во 2018 година. Специјализирани сме за суви градежни системи – Knauf, Rigips и Tehnogips – Armstrong и Hunter Douglas плафони, молерај, глетување и кречење." data-en="IB Premium Art is a construction company based in Stajkovci, Skopje, founded in 2018. We specialize in dry construction systems – Knauf, Rigips and Tehnogips – Armstrong and Hunter Douglas ceilings, painting, plastering and whitewashing.">
+          <h2 class="section-title" data-html="true"
+              data-mk="Градиме со страст,<br>работиме со прецизност"
+              data-en="We Build with Passion,<br>Work with Precision">
+            Градиме со страст,<br>работиме со прецизност
+          </h2>
+          <p class="about-desc"
+             data-mk="IB Premium Art е градежна компанија со седиште во с. Стајковци, Скопје, основана во 2018 година. Специјализирани сме за суви градежни системи – Knauf, Rigips и Tehnogips – Armstrong и Hunter Douglas плафони, молерај, глетување и кречење."
+             data-en="IB Premium Art is a construction company based in Stajkovci, Skopje, founded in 2018. We specialize in dry construction systems – Knauf, Rigips and Tehnogips – Armstrong and Hunter Douglas ceilings, painting, plastering and whitewashing.">
             IB Premium Art е градежна компанија со седиште во с. Стајковци, Скопје, основана во 2018 година. Специјализирани сме за суви градежни системи – Knauf, Rigips и Tehnogips – Armstrong и Hunter Douglas плафони, молерај, глетување и кречење.
           </p>
-          <p class="about-desc" data-mk="Секој проект го третираме со највисоко ниво на стручност и посветеност. Нашиот тим е обучен директно кај производителите и следи ги сите стандарди и препораки за монтажа." data-en="Every project is treated with the highest level of expertise and dedication. Our team is trained directly by manufacturers and follows all installation standards and recommendations.">
+          <p class="about-desc"
+             data-mk="Секој проект го третираме со највисоко ниво на стручност и посветеност. Нашиот тим е обучен директно кај производителите и следи ги сите стандарди и препораки за монтажа."
+             data-en="Every project is treated with the highest level of expertise and dedication. Our team is trained directly by manufacturers and follows all installation standards and recommendations.">
             Секој проект го третираме со највисоко ниво на стручност и посветеност. Нашиот тим е обучен директно кај производителите и следи ги сите стандарди и препораки за монтажа.
           </p>
           <div class="about-stats">
@@ -107,7 +126,7 @@
     </div>
   </section>
 
-  <!-- ===== BRANDS / PARTNER LOGOS ===== -->
+  <!-- ===== BRANDS ===== -->
   <section class="brands" aria-label="Партнерски брендови">
     <div class="container">
       <p class="brands-title" data-mk="Работиме со" data-en="We work with">Работиме со</p>
@@ -133,22 +152,27 @@
     <div class="container">
       <div class="section-label" data-mk="Услуги" data-en="Services">Услуги</div>
       <h2 class="section-title centered" data-mk="Што правиме?" data-en="What Do We Do?">Што правиме?</h2>
-      <p class="section-sub centered" data-mk="Нудиме комплетен спектар на суви градежни и финишерски работи" data-en="We offer a complete range of dry construction and finishing works">Нудиме комплетен спектар на суви градежни и финишерски работи</p>
-
+      <p class="section-sub centered"
+         data-mk="Нудиме комплетен спектар на суви градежни и финишерски работи"
+         data-en="We offer a complete range of dry construction and finishing works">
+        Нудиме комплетен спектар на суви градежни и финишерски работи
+      </p>
       <div class="services-grid">
 
         <div class="service-card" id="svc-knauf">
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="28" width="40" height="6" rx="2" fill="currentColor" opacity=".2"/><rect x="8" y="18" width="32" height="8" rx="2" fill="currentColor" opacity=".5"/><rect x="12" y="8" width="24" height="8" rx="2" fill="currentColor"/></svg>
           </div>
-          <h3 class="service-name">Knauf системи</h3>
-          <p class="service-desc" data-mk="Knauf е светски лидер во производство на гипсани плочи, малтери и системи за суво градење. Нудиме монтажа на ѕидни и таванични системи по целата Knauf програма – преградни ѕидови, облоги, хидроизолација, подни системи и звучна изолација." data-en="Knauf is a world leader in gypsum board, plasters and dry construction systems. We install wall and ceiling systems across the full Knauf range – partition walls, linings, waterproofing, floor systems and acoustic insulation.">
+          <h3 class="service-name" data-mk="Knauf системи" data-en="Knauf Systems">Knauf системи</h3>
+          <p class="service-desc"
+             data-mk="Knauf е светски лидер во производство на гипсани плочи, малтери и системи за суво градење. Нудиме монтажа на ѕидни и таванични системи по целата Knauf програма – преградни ѕидови, облоги, хидроизолација, подни системи и звучна изолација."
+             data-en="Knauf is a world leader in gypsum board, plasters and dry construction systems. We install wall and ceiling systems across the full Knauf range – partition walls, linings, waterproofing, floor systems and acoustic insulation.">
             Knauf е светски лидер во производство на гипсани плочи, малтери и системи за суво градење. Нудиме монтажа на ѕидни и таванични системи по целата Knauf програма – преградни ѕидови, облоги, хидроизолација, подни системи и звучна изолација.
           </p>
           <ul class="service-list">
-            <li data-mk="Преградни ѕидови" data-en="Partition walls">Преградни ѕидови</li>
-            <li data-mk="Таванични системи" data-en="Ceiling systems">Таванични системи</li>
-            <li data-mk="Акустична изолација" data-en="Acoustic insulation">Акустична изолација</li>
+            <li data-mk="Преградни ѕидови"       data-en="Partition walls">Преградни ѕидови</li>
+            <li data-mk="Таванични системи"       data-en="Ceiling systems">Таванични системи</li>
+            <li data-mk="Акустична изолација"     data-en="Acoustic insulation">Акустична изолација</li>
             <li data-mk="Влажни простории (W313)" data-en="Wet rooms (W313)">Влажни простории (W313)</li>
           </ul>
         </div>
@@ -157,14 +181,16 @@
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="currentColor" opacity=".15"/><path d="M12 24h24M24 12v24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="6" fill="currentColor"/></svg>
           </div>
-          <h3 class="service-name">Rigips системи</h3>
-          <p class="service-desc" data-mk="Rigips (Saint-Gobain) нуди врвни гипсани плочи и системи со исклучителна прецизност и перформанси. Ги применуваме Rigips решенија за сложени архитектонски форми, криви површини, заштита од оган и висока влажност." data-en="Rigips (Saint-Gobain) offers premium gypsum boards and systems with exceptional precision and performance. We apply Rigips solutions for complex architectural shapes, curved surfaces, fire protection and high humidity environments.">
-            Rigips (Saint-Gobain) нуди врвни гипсани плочи и системи со исклучителна прецизност и перформанси. Ги применуваме Rigips решенија за сложени архитектонски форми, криви површини, заштита од оган и висока влажност.
+          <h3 class="service-name" data-mk="Rigips системи" data-en="Rigips Systems">Rigips системи</h3>
+          <p class="service-desc"
+             data-mk="Rigips (Saint-Gobain) нуди врвни гипсани плочи и системи со исклучителна прецизност. Ги применуваме Rigips решенија за сложени архитектонски форми, криви површини, заштита од оган и висока влажност."
+             data-en="Rigips (Saint-Gobain) offers premium gypsum boards and systems with exceptional precision. We apply Rigips solutions for complex architectural shapes, curved surfaces, fire protection and high humidity environments.">
+            Rigips (Saint-Gobain) нуди врвни гипсани плочи и системи со исклучителна прецизност. Ги применуваме Rigips решенија за сложени архитектонски форми, криви површини, заштита од оган и висока влажност.
           </p>
           <ul class="service-list">
             <li data-mk="Сложени архитектонски форми" data-en="Complex architectural shapes">Сложени архитектонски форми</li>
-            <li data-mk="Заштита од оган (F30/F60)" data-en="Fire protection (F30/F60)">Заштита од оган (F30/F60)</li>
-            <li data-mk="Криви површини и декори" data-en="Curved surfaces & decor">Криви површини и декори</li>
+            <li data-mk="Заштита од оган (F30/F60)"   data-en="Fire protection (F30/F60)">Заштита од оган (F30/F60)</li>
+            <li data-mk="Криви површини и декори"    data-en="Curved surfaces &amp; decor">Криви површини и декори</li>
           </ul>
         </div>
 
@@ -172,13 +198,15 @@
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40L24 8l16 32H8z" fill="currentColor" opacity=".15"/><path d="M8 40L24 8l16 32" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="14" y1="30" x2="34" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="service-name">Tehnogips системи</h3>
-          <p class="service-desc" data-mk="Tehnogips е македонски производител на гипсани производи со висок квалитет. Ги користиме нивните малтери, шпакли и гипсани плочи за стандардни и специјализирани апликации – особено доверлив избор за локални проекти со оптимален однос квалитет/цена." data-en="Tehnogips is a Macedonian manufacturer of high-quality gypsum products. We use their mortars, joint compounds and gypsum boards for standard and specialized applications – a particularly reliable choice for local projects with an optimal quality/price ratio.">
-            Tehnogips е македонски производител на гипсани производи со висок квалитет. Ги користиме нивните малтери, шпакли и гипсани плочи за стандардни и специјализирани апликации – особено доверлив избор за локални проекти со оптимален однос квалитет/цена.
+          <h3 class="service-name" data-mk="Tehnogips системи" data-en="Tehnogips Systems">Tehnogips системи</h3>
+          <p class="service-desc"
+             data-mk="Tehnogips е македонски производител на гипсани производи со висок квалитет. Ги користиме нивните малтери, шпакли и гипсани плочи за стандардни и специјализирани апликации со оптимален однос квалитет/цена."
+             data-en="Tehnogips is a Macedonian manufacturer of high-quality gypsum products. We use their mortars, joint compounds and gypsum boards for standard and specialized applications with an optimal quality/price ratio.">
+            Tehnogips е македонски производител на гипсани производи со висок квалитет. Ги користиме нивните малтери, шпакли и гипсани плочи за стандардни и специјализирани апликации со оптимален однос квалитет/цена.
           </p>
           <ul class="service-list">
-            <li data-mk="Гипсани плочи" data-en="Gypsum boards">Гипсани плочи</li>
-            <li data-mk="Малтери и шпакли" data-en="Mortars & compounds">Малтери и шпакли</li>
+            <li data-mk="Гипсани плочи"          data-en="Gypsum boards">Гипсани плочи</li>
+            <li data-mk="Малтери и шпакли"        data-en="Mortars &amp; compounds">Малтери и шпакли</li>
             <li data-mk="Оптимален квалитет/цена" data-en="Optimal quality/price">Оптимален квалитет/цена</li>
           </ul>
         </div>
@@ -187,14 +215,16 @@
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="6" width="36" height="36" rx="3" fill="currentColor" opacity=".1"/><rect x="6" y="6" width="17" height="17" rx="2" fill="currentColor" opacity=".4"/><rect x="25" y="6" width="17" height="17" rx="2" fill="currentColor" opacity=".4"/><rect x="6" y="25" width="17" height="17" rx="2" fill="currentColor" opacity=".4"/><rect x="25" y="25" width="17" height="17" rx="2" fill="currentColor" opacity=".4"/></svg>
           </div>
-          <h3 class="service-name">Armstrong плафони</h3>
-          <p class="service-desc" data-mk="Armstrong е светски лидер во системи за спуштени таванки. Нудиме монтажа на Armstrong металните мрежи и плочи за канцелариски, комерцијални и индустриски простори. Овозможуваат лесен пристап до инсталациите, акустична контрола и естетски привлечен изглед." data-en="Armstrong is the world leader in suspended ceiling systems. We install Armstrong metal grids and tiles for office, commercial and industrial spaces. They provide easy access to installations, acoustic control and an aesthetically pleasing appearance.">
-            Armstrong е светски лидер во системи за спуштени таванки. Нудиме монтажа на Armstrong металните мрежи и плочи за канцелариски, комерцијални и индустриски простори. Овозможуваат лесен пристап до инсталациите, акустична контрола и естетски привлечен изглед.
+          <h3 class="service-name" data-mk="Armstrong плафони" data-en="Armstrong Ceilings">Armstrong плафони</h3>
+          <p class="service-desc"
+             data-mk="Armstrong е светски лидер во системи за спуштени таванки. Нудиме монтажа на Armstrong металните мрежи и плочи за канцелариски, комерцијални и индустриски простори со лесен пристап до инсталациите и акустична контрола."
+             data-en="Armstrong is the world leader in suspended ceiling systems. We install Armstrong metal grids and tiles for office, commercial and industrial spaces with easy access to installations and acoustic control.">
+            Armstrong е светски лидер во системи за спуштени таванки. Нудиме монтажа на Armstrong металните мрежи и плочи за канцелариски, комерцијални и индустриски простори со лесен пристап до инсталациите и акустична контрола.
           </p>
           <ul class="service-list">
-            <li data-mk="Метална конструкција (grid)" data-en="Metal grid construction">Метална конструкција (grid)</li>
-            <li data-mk="Минерални и метални плочи" data-en="Mineral & metal tiles">Минерални и метални плочи</li>
-            <li data-mk="Канцелариски и комерцијални простори" data-en="Office & commercial spaces">Канцелариски и комерцијални простори</li>
+            <li data-mk="Метална конструкција (grid)"             data-en="Metal grid construction">Метална конструкција (grid)</li>
+            <li data-mk="Минерални и метални плочи"               data-en="Mineral &amp; metal tiles">Минерални и метални плочи</li>
+            <li data-mk="Канцелариски и комерцијални простори"    data-en="Office &amp; commercial spaces">Канцелариски и комерцијални простори</li>
           </ul>
         </div>
 
@@ -202,14 +232,16 @@
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 14h40M4 22h40M4 30h40M4 38h40" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".3"/><path d="M4 10h40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="service-name">Hunter Douglas плафони</h3>
-          <p class="service-desc" data-mk="Hunter Douglas е премиум бренд за архитектонски производи – метални ламели, линеарни плафони и декоративни елементи. Нивните производи се идеален избор за луксузни простори, хотели, трговски центри и јавни објекти каде дизајнот е приоритет." data-en="Hunter Douglas is a premium brand for architectural products – metal slats, linear ceilings and decorative elements. Their products are the ideal choice for luxury spaces, hotels, shopping centers and public buildings where design is a priority.">
-            Hunter Douglas е премиум бренд за архитектонски производи – метални ламели, линеарни плафони и декоративни елементи. Нивните производи се идеален избор за луксузни простори, хотели, трговски центри и јавни објекти каде дизајнот е приоритет.
+          <h3 class="service-name" data-mk="Hunter Douglas плафони" data-en="Hunter Douglas Ceilings">Hunter Douglas плафони</h3>
+          <p class="service-desc"
+             data-mk="Hunter Douglas е премиум бренд за архитектонски производи – метални ламели, линеарни плафони и декоративни елементи. Идеален избор за луксузни простори, хотели, трговски центри и јавни објекти."
+             data-en="Hunter Douglas is a premium brand for architectural products – metal slats, linear ceilings and decorative elements. The ideal choice for luxury spaces, hotels, shopping centers and public buildings.">
+            Hunter Douglas е премиум бренд за архитектонски производи – метални ламели, линеарни плафони и декоративни елементи. Идеален избор за луксузни простори, хотели, трговски центри и јавни објекти.
           </p>
           <ul class="service-list">
             <li data-mk="Линеарни метални плафони" data-en="Linear metal ceilings">Линеарни метални плафони</li>
-            <li data-mk="Декоративни ламели" data-en="Decorative slats">Декоративни ламели</li>
-            <li data-mk="Луксузни и јавни простори" data-en="Luxury & public spaces">Луксузни и јавни простори</li>
+            <li data-mk="Декоративни ламели"       data-en="Decorative slats">Декоративни ламели</li>
+            <li data-mk="Луксузни и јавни простори" data-en="Luxury &amp; public spaces">Луксузни и јавни простори</li>
           </ul>
         </div>
 
@@ -217,15 +249,17 @@
           <div class="service-icon">
             <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 38c0 0 2-6 14-6s14 6 14 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".4"/><path d="M24 8c-8 0-14 5-14 12s6 12 14 12 14-5 14-12S32 8 24 8z" fill="currentColor" opacity=".2"/><circle cx="24" cy="20" r="5" fill="currentColor"/></svg>
           </div>
-          <h3 class="service-name" data-mk="Молерај, глетување и кречење" data-en="Painting, Plastering & Whitewashing">Молерај, глетување и кречење</h3>
-          <p class="service-desc" data-mk="Финишерските работи се последниот и најважен чекор во секоја реновација. Нашиот тим изведува глетување (шпакловање), кречење (белење) и молерај со врвни материјали – постигнувајќи совршено рамни и визуелно привлечни површини." data-en="Finishing works are the last and most important step in any renovation. Our team performs plastering (skim coating), whitewashing and painting with premium materials – achieving perfectly flat and visually appealing surfaces.">
-            Финишерските работи се последниот и најважен чекор во секоја реновација. Нашиот тим изведува глетување (шпакловање), кречење (белење) и молерај со врвни материјали – постигнувајќи совршено рамни и визуелно привлечни површини.
+          <h3 class="service-name" data-mk="Молерај, глетување и кречење" data-en="Painting, Plastering &amp; Whitewashing">Молерај, глетување и кречење</h3>
+          <p class="service-desc"
+             data-mk="Финишерските работи се последниот и најважен чекор. Нашиот тим изведува глетување, кречење и молерај со врвни материјали – постигнувајќи совршено рамни и визуелно привлечни површини."
+             data-en="Finishing works are the last and most important step. Our team performs plastering, whitewashing and painting with premium materials – achieving perfectly flat and visually appealing surfaces.">
+            Финишерските работи се последниот и најважен чекор. Нашиот тим изведува глетување, кречење и молерај со врвни материјали – постигнувајќи совршено рамни и визуелно привлечни површини.
           </p>
           <ul class="service-list">
-            <li data-mk="Глетување / шпакловање" data-en="Skim coating / plastering">Глетување / шпакловање</li>
-            <li data-mk="Кречење (белење)" data-en="Whitewashing">Кречење (белење)</li>
-            <li data-mk="Молерај – декоративни и стандардни бои" data-en="Painting – decorative & standard">Молерај – декоративни и стандардни бои</li>
-            <li data-mk="Декоративни техники и ефекти" data-en="Decorative techniques & effects">Декоративни техники и ефекти</li>
+            <li data-mk="Глетување / шпакловање"               data-en="Skim coating / plastering">Глетување / шпакловање</li>
+            <li data-mk="Кречење (белење)"                     data-en="Whitewashing">Кречење (белење)</li>
+            <li data-mk="Молерај – декоративни и стандардни"   data-en="Painting – decorative &amp; standard">Молерај – декоративни и стандардни</li>
+            <li data-mk="Декоративни техники и ефекти"         data-en="Decorative techniques &amp; effects">Декоративни техники и ефекти</li>
           </ul>
         </div>
 
@@ -238,187 +272,46 @@
     <div class="container">
       <div class="section-label" data-mk="Галерија" data-en="Gallery">Галерија</div>
       <h2 class="section-title centered" data-mk="Наши работи" data-en="Our Work">Наши работи</h2>
-      <p class="section-sub centered" data-mk="Секој проект е приказна за себе. Погледнете ги нашите завршени работи." data-en="Every project tells its own story. Browse our completed works.">Секој проект е приказна за себе. Погледнете ги нашите завршени работи.</p>
-
-      <!-- Filter tabs -->
+      <p class="section-sub centered"
+         data-mk="Лебдете над слика за да ја видите трансформацијата. Кликнете за да ги истражите сите фотографии."
+         data-en="Hover over a card to watch the transformation unfold. Click to explore all photos.">
+        Лебдете над слика за да ја видите трансформацијата. Кликнете за да ги истражите сите фотографии.
+      </p>
       <div class="gallery-filters" role="tablist" aria-label="Филтри за галеријата">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" id="filter-all" data-mk="Сите" data-en="All">Сите</button>
-        <button class="filter-btn" data-filter="home" role="tab" aria-selected="false" id="filter-home" data-mk="Наша компанија" data-en="Our Company">Наша компанија</button>
-        <button class="filter-btn" data-filter="project" role="tab" aria-selected="false" id="filter-project" data-mk="Клиентски проекти" data-en="Client Projects">Клиентски проекти</button>
+        <button class="filter-btn active" data-filter="all"     role="tab" aria-selected="true"  data-mk="Сите"               data-en="All">Сите</button>
+        <button class="filter-btn"        data-filter="home"    role="tab" aria-selected="false" data-mk="Наша компанија"      data-en="Our Company">Наша компанија</button>
+        <button class="filter-btn"        data-filter="project" role="tab" aria-selected="false" data-mk="Клиентски проекти"  data-en="Client Projects">Клиентски проекти</button>
       </div>
-
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" id="galleryGrid" role="tabpanel" aria-labelledby="filter-all">
-
-        <!-- HOME folder images -->
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/9.jpg" alt="IB Premium Art – завршена зграда" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/9.jpg" data-caption-mk="Завршена реновација на нашата зграда" data-caption-en="Completed renovation of our building">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/7.jpg" alt="IB Premium Art градба" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/7.jpg" data-caption-mk="Градба на нашата зграда" data-caption-en="Construction of our building">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/5.jpg" alt="IB Premium Art во изградба" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/5.jpg" data-caption-mk="Зградата во тек на изградба" data-caption-en="Building under construction">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/3.jpg" alt="IB Premium Art темели" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/3.jpg" data-caption-mk="Поставување на темели" data-caption-en="Foundation laying">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/1.jpg" alt="IB Premium Art почеток" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/1.jpg" data-caption-mk="Почеток на изградба" data-caption-en="Start of construction">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="home" data-project="company">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Home/8.jpg" alt="IB Premium Art детали" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Наша компанија" data-en="Our Company">Наша компанија</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Home/8.jpg" data-caption-mk="Завршни детали" data-caption-en="Finishing details">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Customer 1 -->
-        <div class="gallery-item" data-category="project" data-project="p-customer1">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Customer 1/0.jpg" alt="Клиентски проект – пред реновација" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Клиент – пред" data-en="Client – before">Клиент – пред</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Customer 1/0.jpg" data-caption-mk="Клиентски проект – пред реновација" data-caption-en="Client project – before renovation">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="project" data-project="p-customer1">
-          <div class="gallery-img-wrap">
-            <img src="Assets/Customer 1/1.jpg" alt="Клиентски проект – по реновација" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Клиент – после" data-en="Client – after">Клиент – после</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/Customer 1/1.jpg" data-caption-mk="Клиентски проект – по реновација" data-caption-en="Client project – after renovation">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projects 2–18 – Last image of each (finished result) + first image (before) -->
-        <!-- Project 2 -->
-        <div class="gallery-item" data-category="project" data-project="p2">
-          <div class="gallery-img-wrap">
-            <img src="Assets/2/1.jpg" alt="Проект 2 – резултат" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Проект #2" data-en="Project #2">Проект #2</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/2/1.jpg" data-caption-mk="Проект #2 – финален изглед" data-caption-en="Project #2 – final result">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Project other (large set) -->
-        <div class="gallery-item gallery-item--wide" data-category="project" data-project="p-other">
-          <div class="gallery-img-wrap">
-            <img src="Assets/other/10.jpg" alt="Работа на проект" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Финишерски работи" data-en="Finishing Works">Финишерски работи</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/other/10.jpg" data-caption-mk="Финишерски работи – детален поглед" data-caption-en="Finishing works – detail view">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="project" data-project="p-other">
-          <div class="gallery-img-wrap">
-            <img src="Assets/other/11.jpg" alt="Работа на проект" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-label" data-mk="Финишерски работи" data-en="Finishing Works">Финишерски работи</span>
-              <button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/other/11.jpg" data-caption-mk="Финишерски работи" data-caption-en="Finishing works">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Projects 3-18 last images -->
-        <div class="gallery-item" data-category="project" data-project="p3"><div class="gallery-img-wrap"><img src="Assets/3/3.jpg" alt="Проект #3" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #3" data-en="Project #3">Проект #3</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/3/3.jpg" data-caption-mk="Проект #3" data-caption-en="Project #3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p4"><div class="gallery-img-wrap"><img src="Assets/4/1.jpg" alt="Проект #4" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #4" data-en="Project #4">Проект #4</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/4/1.jpg" data-caption-mk="Проект #4" data-caption-en="Project #4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p5"><div class="gallery-img-wrap"><img src="Assets/5/1.jpg" alt="Проект #5" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #5" data-en="Project #5">Проект #5</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/5/1.jpg" data-caption-mk="Проект #5" data-caption-en="Project #5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p6"><div class="gallery-img-wrap"><img src="Assets/6/2.jpg" alt="Проект #6" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #6" data-en="Project #6">Проект #6</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/6/2.jpg" data-caption-mk="Проект #6" data-caption-en="Project #6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p7"><div class="gallery-img-wrap"><img src="Assets/7/3.jpg" alt="Проект #7" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #7" data-en="Project #7">Проект #7</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/7/3.jpg" data-caption-mk="Проект #7" data-caption-en="Project #7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p8"><div class="gallery-img-wrap"><img src="Assets/8/1.jpg" alt="Проект #8" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #8" data-en="Project #8">Проект #8</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/8/1.jpg" data-caption-mk="Проект #8" data-caption-en="Project #8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p9"><div class="gallery-img-wrap"><img src="Assets/9/3.jpg" alt="Проект #9" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #9" data-en="Project #9">Проект #9</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/9/3.jpg" data-caption-mk="Проект #9" data-caption-en="Project #9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item gallery-item--wide" data-category="project" data-project="p10"><div class="gallery-img-wrap"><img src="Assets/10/4.jpg" alt="Проект #10" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #10" data-en="Project #10">Проект #10</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/10/4.jpg" data-caption-mk="Проект #10 – финален изглед" data-caption-en="Project #10 – final look"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p11"><div class="gallery-img-wrap"><img src="Assets/11/2.jpg" alt="Проект #11" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #11" data-en="Project #11">Проект #11</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/11/2.jpg" data-caption-mk="Проект #11" data-caption-en="Project #11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p12"><div class="gallery-img-wrap"><img src="Assets/12/1.jpg" alt="Проект #12" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #12" data-en="Project #12">Проект #12</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/12/1.jpg" data-caption-mk="Проект #12" data-caption-en="Project #12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p13"><div class="gallery-img-wrap"><img src="Assets/13/5.jpg" alt="Проект #13" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #13" data-en="Project #13">Проект #13</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/13/5.jpg" data-caption-mk="Проект #13" data-caption-en="Project #13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p14"><div class="gallery-img-wrap"><img src="Assets/14/1.jpg" alt="Проект #14" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #14" data-en="Project #14">Проект #14</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/14/1.jpg" data-caption-mk="Проект #14" data-caption-en="Project #14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item gallery-item--wide" data-category="project" data-project="p15"><div class="gallery-img-wrap"><img src="Assets/15/1.jpg" alt="Проект #15" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #15" data-en="Project #15">Проект #15</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/15/1.jpg" data-caption-mk="Проект #15" data-caption-en="Project #15"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p16"><div class="gallery-img-wrap"><img src="Assets/16/2.jpg" alt="Проект #16" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #16" data-en="Project #16">Проект #16</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/16/2.jpg" data-caption-mk="Проект #16" data-caption-en="Project #16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p17"><div class="gallery-img-wrap"><img src="Assets/17/3.jpg" alt="Проект #17" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #17" data-en="Project #17">Проект #17</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/17/3.jpg" data-caption-mk="Проект #17" data-caption-en="Project #17"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-        <div class="gallery-item" data-category="project" data-project="p18"><div class="gallery-img-wrap"><img src="Assets/18/2.jpg" alt="Проект #18" loading="lazy" /><div class="gallery-overlay"><span class="gallery-label" data-mk="Проект #18" data-en="Project #18">Проект #18</span><button class="gallery-zoom" aria-label="Зголеми слика" data-src="Assets/18/2.jpg" data-caption-mk="Проект #18" data-caption-en="Project #18"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div></div></div>
-
-      </div>
-      <!-- Load More -->
+      <!-- JS populates this -->
+      <div class="gallery-grid" id="galleryGrid" role="tabpanel"></div>
       <div class="gallery-more">
-        <a href="https://www.instagram.com/ib.premiumart/" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-mk="Повеќе на Instagram" data-en="More on Instagram">Повеќе на Instagram</a>
+        <a href="https://www.instagram.com/ib.premiumart/" class="btn btn-outline" target="_blank" rel="noopener noreferrer"
+           data-mk="Повеќе на Instagram" data-en="More on Instagram">Повеќе на Instagram</a>
       </div>
     </div>
   </section>
 
   <!-- ===== LIGHTBOX ===== -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Зголемен приказ на слика" hidden>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Проект галерија" hidden>
     <button class="lightbox-close" id="lightboxClose" aria-label="Затвори">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <button class="lightbox-prev" id="lightboxPrev" aria-label="Претходна слика">
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Претходна">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <div class="lightbox-img-wrap">
+    <div class="lightbox-stage" id="lightboxStage">
       <img src="" alt="" id="lightboxImg" class="lightbox-img" />
-      <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
-    <button class="lightbox-next" id="lightboxNext" aria-label="Следна слика">
+    <button class="lightbox-next" id="lightboxNext" aria-label="Следна">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
+    <div class="lightbox-footer">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+      <div class="lightbox-dots" id="lightboxDots"></div>
+      <div class="lb-progress-wrap">
+        <div class="lb-progress-bar" id="lbProgressBar"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ===== CONTACT ===== -->
@@ -426,8 +319,11 @@
     <div class="container">
       <div class="section-label" data-mk="Контакт" data-en="Contact">Контакт</div>
       <h2 class="section-title centered" data-mk="Контактирајте нè" data-en="Get In Touch">Контактирајте нè</h2>
-      <p class="section-sub centered" data-mk="Подгответе го вашиот простор за трансформација – контактирајте нè денес!" data-en="Prepare your space for transformation – contact us today!">Подгответе го вашиот простор за трансформација – контактирајте нè денес!</p>
-
+      <p class="section-sub centered"
+         data-mk="Подгответе го вашиот простор за трансформација – контактирајте нè денес!"
+         data-en="Prepare your space for transformation – contact us today!">
+        Подгответе го вашиот простор за трансформација – контактирајте нè денес!
+      </p>
       <div class="contact-grid">
         <div class="contact-info">
           <div class="contact-card" id="contact-email">
@@ -445,7 +341,9 @@
             </div>
             <div>
               <p class="contact-label" data-mk="Адреса" data-en="Address">Адреса</p>
-              <a href="https://maps.app.goo.gl/Q36hvZSrwvPEKwwx9" class="contact-value" target="_blank" rel="noopener noreferrer">Скопје, с. Стајковци<br>ул. 1 бр. 203А</a>
+              <a href="https://maps.app.goo.gl/Q36hvZSrwvPEKwwx9" class="contact-value" target="_blank" rel="noopener noreferrer">
+                Скопје, с. Стајковци<br>ул. 1 бр. 203А
+              </a>
             </div>
           </div>
           <div class="contact-card" id="contact-social">
@@ -467,19 +365,13 @@
             </div>
           </div>
         </div>
-
         <div class="contact-map">
           <div class="map-wrap">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d549.0827547043419!2d21.512334157927818!3d42.028500277857844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13543f9fd4954fb3%3A0xe6ab45f70f1ff511!2sIB%20Premium%20Art!5e0!3m2!1sen!2smk!4v1789325218730!5m2!1sen!2smk"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"
-              title="IB Premium Art локација на мапа"
-            ></iframe>
+              title="IB Premium Art локација на мапа"></iframe>
           </div>
         </div>
       </div>
@@ -505,33 +397,37 @@
         <div class="footer-links-group">
           <h3 class="footer-heading" data-mk="Навигација" data-en="Navigation">Навигација</h3>
           <ul class="footer-links">
-            <li><a href="#about" data-mk="За нас" data-en="About">За нас</a></li>
-            <li><a href="#services" data-mk="Услуги" data-en="Services">Услуги</a></li>
-            <li><a href="#gallery" data-mk="Галерија" data-en="Gallery">Галерија</a></li>
-            <li><a href="#contact" data-mk="Контакт" data-en="Contact">Контакт</a></li>
+            <li><a href="#about"    data-mk="За нас"    data-en="About">За нас</a></li>
+            <li><a href="#services" data-mk="Услуги"   data-en="Services">Услуги</a></li>
+            <li><a href="#gallery"  data-mk="Галерија" data-en="Gallery">Галерија</a></li>
+            <li><a href="#contact"  data-mk="Контакт"  data-en="Contact">Контакт</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
           <h3 class="footer-heading" data-mk="Услуги" data-en="Services">Услуги</h3>
           <ul class="footer-links">
-            <li><a href="#svc-knauf">Knauf системи</a></li>
-            <li><a href="#svc-rigips">Rigips системи</a></li>
-            <li><a href="#svc-armstrong">Armstrong плафони</a></li>
-            <li><a href="#svc-hunterdouglas">Hunter Douglas плафони</a></li>
-            <li><a href="#svc-painting" data-mk="Молерај и глетување" data-en="Painting & plastering">Молерај и глетување</a></li>
+            <li><a href="#svc-knauf"         data-mk="Knauf системи"              data-en="Knauf Systems">Knauf системи</a></li>
+            <li><a href="#svc-rigips"        data-mk="Rigips системи"             data-en="Rigips Systems">Rigips системи</a></li>
+            <li><a href="#svc-armstrong"     data-mk="Armstrong плафони"          data-en="Armstrong Ceilings">Armstrong плафони</a></li>
+            <li><a href="#svc-hunterdouglas" data-mk="Hunter Douglas плафони"     data-en="Hunter Douglas Ceilings">Hunter Douglas плафони</a></li>
+            <li><a href="#svc-painting"      data-mk="Молерај и глетување"        data-en="Painting &amp; Plastering">Молерај и глетување</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
           <h3 class="footer-heading" data-mk="Контакт" data-en="Contact">Контакт</h3>
           <ul class="footer-links">
             <li><a href="mailto:Ibpremiumart@gmail.com">Ibpremiumart@gmail.com</a></li>
-            <li><a href="https://maps.app.goo.gl/Q36hvZSrwvPEKwwx9" target="_blank" rel="noopener noreferrer" data-mk="с. Стајковци, ул. 1 бр. 203А" data-en="Stajkovci, st. 1 no. 203A">с. Стајковци, ул. 1 бр. 203А</a></li>
+            <li><a href="https://maps.app.goo.gl/Q36hvZSrwvPEKwwx9" target="_blank" rel="noopener noreferrer"
+                   data-mk="с. Стајковци, ул. 1 бр. 203А" data-en="Stajkovci, st. 1 no. 203A">с. Стајковци, ул. 1 бр. 203А</a></li>
             <li><span data-mk="Скопје, Македонија" data-en="Skopje, North Macedonia">Скопје, Македонија</span></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p data-mk="© 2025 IB Premium Art. Сите права задржани. | ibpremiumart.mk" data-en="© 2025 IB Premium Art. All rights reserved. | ibpremiumart.mk">© 2025 IB Premium Art. Сите права задржани. | ibpremiumart.mk</p>
+        <p data-mk="© 2025 IB Premium Art. Сите права задржани. | ibpremiumart.mk"
+           data-en="© 2025 IB Premium Art. All rights reserved. | ibpremiumart.mk">
+          © 2025 IB Premium Art. Сите права задржани. | ibpremiumart.mk
+        </p>
       </div>
     </div>
   </footer>

@@ -1,152 +1,555 @@
 /* =========================================================
-   IB PREMIUM ART – JavaScript
-   Features: Parallax Hero, Nav scroll, Mobile menu,
-   Gallery filter, Lightbox, Language toggle,
-   Scroll-driven entrance animations
+   IB PREMIUM ART – Main Script
+   Features:
+   - Project gallery generated from data (hover cycling)
+   - Lightbox with auto-slide, dots, progress bar
+   - Parallax hero, Navbar, Gallery filter
+   - Bilingual MK/EN switcher (fixed innerHTML for HTML content)
+   - Scroll animations, counters, brand ticker
    ========================================================= */
 
 'use strict';
 
-// ── Language System ─────────────────────────────────────
-const translations = {
-  mk: {
-    langLabel: 'MK',
-    langFlag: '🇲🇰',
-    htmlLang: 'mk',
-  },
-  en: {
-    langLabel: 'EN',
-    langFlag: '🇬🇧',
-    htmlLang: 'en',
-  }
-};
+// ── Project Data ─────────────────────────────────────────
+// Each project: folder, count (images 0.jpg … (count-1).jpg),
+// category, optional featured (spans 2 cols), labels
+const PROJECTS = [
+  { id: 'home',   folder: 'Assets/Home',       count: 10, category: 'home',    featured: true,
+    labelMk: 'Наша компанија',     labelEn: 'Our Company',
+    descMk:  'Реновација на нашата зграда – од темели до финален изглед',
+    descEn:  'Renovation of our building – from foundations to final look' },
 
+  { id: 'c1',    folder: 'Assets/Customer 1',  count: 2,  category: 'project',
+    labelMk: 'Клиент #1',          labelEn: 'Client #1',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p2',    folder: 'Assets/2',            count: 2,  category: 'project',
+    labelMk: 'Проект #2',          labelEn: 'Project #2',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p3',    folder: 'Assets/3',            count: 4,  category: 'project',
+    labelMk: 'Проект #3',          labelEn: 'Project #3',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p4',    folder: 'Assets/4',            count: 2,  category: 'project',
+    labelMk: 'Проект #4',          labelEn: 'Project #4',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p5',    folder: 'Assets/5',            count: 2,  category: 'project',
+    labelMk: 'Проект #5',          labelEn: 'Project #5',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p6',    folder: 'Assets/6',            count: 3,  category: 'project',
+    labelMk: 'Проект #6',          labelEn: 'Project #6',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p7',    folder: 'Assets/7',            count: 4,  category: 'project',
+    labelMk: 'Проект #7',          labelEn: 'Project #7',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p8',    folder: 'Assets/8',            count: 2,  category: 'project',
+    labelMk: 'Проект #8',          labelEn: 'Project #8',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p9',    folder: 'Assets/9',            count: 4,  category: 'project',
+    labelMk: 'Проект #9',          labelEn: 'Project #9',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p10',   folder: 'Assets/10',           count: 5,  category: 'project', featured: true,
+    labelMk: 'Проект #10',         labelEn: 'Project #10',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p11',   folder: 'Assets/11',           count: 3,  category: 'project',
+    labelMk: 'Проект #11',         labelEn: 'Project #11',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p12',   folder: 'Assets/12',           count: 2,  category: 'project',
+    labelMk: 'Проект #12',         labelEn: 'Project #12',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p13',   folder: 'Assets/13',           count: 6,  category: 'project', featured: true,
+    labelMk: 'Проект #13',         labelEn: 'Project #13',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p14',   folder: 'Assets/14',           count: 2,  category: 'project',
+    labelMk: 'Проект #14',         labelEn: 'Project #14',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p15',   folder: 'Assets/15',           count: 3,  category: 'project',
+    labelMk: 'Проект #15',         labelEn: 'Project #15',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p16',   folder: 'Assets/16',           count: 3,  category: 'project',
+    labelMk: 'Проект #16',         labelEn: 'Project #16',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p17',   folder: 'Assets/17',           count: 4,  category: 'project',
+    labelMk: 'Проект #17',         labelEn: 'Project #17',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'p18',   folder: 'Assets/18',           count: 3,  category: 'project',
+    labelMk: 'Проект #18',         labelEn: 'Project #18',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
+
+  { id: 'other', folder: 'Assets/other',        count: 12, category: 'project', featured: true,
+    labelMk: 'Финишерски работи',  labelEn: 'Finishing Works',
+    descMk:  'Молерај, глетување и декоративни ефекти',
+    descEn:  'Painting, plastering and decorative effects' },
+];
+
+// Helper: build sorted image url list (0.jpg → last)
+function buildImageList(project) {
+  const urls = [];
+  for (let i = 0; i < project.count; i++) {
+    urls.push(`${project.folder}/${i}.jpg`);
+  }
+  return urls;
+}
+
+
+// ── Language System ──────────────────────────────────────
 let currentLang = 'mk';
 
 function applyLanguage(lang) {
   currentLang = lang;
-  document.documentElement.lang = translations[lang].htmlLang;
+  document.documentElement.lang = lang === 'mk' ? 'mk' : 'en';
 
-  // Update all elements with data-mk / data-en
   document.querySelectorAll('[data-mk]').forEach(el => {
-    const text = el.getAttribute(`data-${lang}`);
-    if (text) {
-      // Handle elements that have children (don't overwrite HTML)
-      if (el.children.length === 0) {
-        el.textContent = text;
-      }
+    const val = el.getAttribute(`data-${lang}`);
+    if (!val) return;
+
+    // If the element has interactive children (a, button, input) do NOT overwrite its innerHTML
+    if (el.querySelector('a, button, input, select, textarea')) return;
+
+    // Use innerHTML for elements marked data-html="true" or when value has tags
+    if (el.dataset.html === 'true' || val.includes('<')) {
+      el.innerHTML = val;
+    } else {
+      el.textContent = val;
     }
   });
 
-  // Update lang button UI
-  const langLabel = document.getElementById('langLabel');
-  const langBtn = document.getElementById('langBtn');
-  if (langLabel) langLabel.textContent = translations[lang].langLabel;
-  if (langBtn) {
-    const flag = langBtn.querySelector('.lang-flag');
-    if (flag) flag.textContent = translations[lang].langFlag;
+  // Update language button UI
+  const flag  = document.querySelector('#langBtn .lang-flag');
+  const label = document.getElementById('langLabel');
+  if (flag)  flag.textContent  = lang === 'mk' ? '🇲🇰' : '🇬🇧';
+  if (label) label.textContent = lang === 'mk' ? 'MK'  : 'EN';
+
+  // Re-apply project card labels that were rendered by JS
+  document.querySelectorAll('.proj-label-text[data-mk]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+  });
+
+  // Re-apply lightbox caption if open
+  if (!document.getElementById('lightbox').hidden) {
+    Lightbox.refreshCaption();
   }
 
-  // Save preference
-  try { localStorage.setItem('ibpa-lang', lang); } catch(e) {}
+  try { localStorage.setItem('ibpa-lang', lang); } catch(_e) {}
 }
 
 function initLanguage() {
   const btn = document.getElementById('langBtn');
   if (!btn) return;
-
-  // Load saved preference
   let saved = 'mk';
-  try { saved = localStorage.getItem('ibpa-lang') || 'mk'; } catch(e) {}
+  try { saved = localStorage.getItem('ibpa-lang') || 'mk'; } catch(_e) {}
   applyLanguage(saved);
+  btn.addEventListener('click', () => applyLanguage(currentLang === 'mk' ? 'en' : 'mk'));
+}
 
-  btn.addEventListener('click', () => {
-    applyLanguage(currentLang === 'mk' ? 'en' : 'mk');
+
+// ── Gallery Builder ──────────────────────────────────────
+// Preload cache to avoid re-creating Image objects
+const preloadCache = new Map();
+
+function preloadProjectImages(project, images) {
+  if (preloadCache.has(project.id)) return;
+  preloadCache.set(project.id, true);
+  images.forEach(src => { const i = new Image(); i.src = src; });
+}
+
+function buildGallery() {
+  const grid = document.getElementById('galleryGrid');
+  if (!grid) return;
+
+  PROJECTS.forEach(project => {
+    const images = buildImageList(project);
+    const lastImg = images[images.length - 1];
+    const isFeatured = project.featured;
+    const photoWord = project.count === 1 ? 'фото' : 'фотографии';
+
+    const card = document.createElement('div');
+    card.className = `proj-card${isFeatured ? ' proj-card--featured' : ''}`;
+    card.dataset.category  = project.category;
+    card.dataset.projectId = project.id;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `${project.labelMk} – ${project.count} ${photoWord}`);
+
+    card.innerHTML = `
+      <div class="proj-img-wrap">
+        <img class="proj-img"
+             src="${lastImg}"
+             alt="${project.labelMk}"
+             loading="lazy" />
+      </div>
+
+      <!-- Top-right: image count badge -->
+      <div class="proj-count-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        ${project.count}
+      </div>
+
+      <!-- Overlay: shown on hover -->
+      <div class="proj-overlay">
+        <!-- Progress dots -->
+        <div class="proj-dots-row">
+          ${images.map((_, i) =>
+            `<span class="proj-dot${i === images.length - 1 ? ' active' : ''}"></span>`
+          ).join('')}
+        </div>
+        <!-- Label row -->
+        <div class="proj-meta">
+          <div>
+            <span class="proj-label-text"
+                  data-mk="${project.labelMk}"
+                  data-en="${project.labelEn}">${project.labelMk}</span>
+            <br>
+            <span class="proj-count-text">${project.count} ${photoWord}</span>
+          </div>
+          <button class="proj-expand-btn" aria-label="Отвори галерија">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    `;
+
+    // ── Hover cycling ─────────────────────────────────────
+    const img  = card.querySelector('.proj-img');
+    const dots = card.querySelectorAll('.proj-dot');
+    let cycleTimer   = null;
+    let currentIdx   = images.length - 1; // start on last
+
+    function setImg(idx, animate = true) {
+      currentIdx = ((idx % images.length) + images.length) % images.length;
+      if (animate) {
+        img.classList.remove('img-fade');
+        void img.offsetWidth; // force reflow
+        img.classList.add('img-fade');
+      }
+      img.src = images[currentIdx];
+      // Update dots
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+    }
+
+    card.addEventListener('mouseenter', () => {
+      preloadProjectImages(project, images);
+      // Start from image 0
+      setImg(0, true);
+      cycleTimer = setInterval(() => {
+        setImg((currentIdx + 1) % images.length, true);
+      }, 750);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      clearInterval(cycleTimer);
+      cycleTimer = null;
+      // Return to last image (final/finished result)
+      setImg(images.length - 1, true);
+    });
+
+    // ── Open lightbox on click ────────────────────────────
+    function openLightbox(e) {
+      // Avoid double-fire when expand button is clicked
+      if (e && e.target.closest('.proj-expand-btn')) return;
+      Lightbox.open(images, project, 0);
+    }
+
+    card.addEventListener('click', openLightbox);
+    card.querySelector('.proj-expand-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      Lightbox.open(images, project, 0);
+    });
+
+    // Keyboard accessibility
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        Lightbox.open(images, project, 0);
+      }
+    });
+
+    // Store reference
+    card._images  = images;
+    card._project = project;
+
+    grid.appendChild(card);
+  });
+
+  // Apply current language to newly rendered label-text elements
+  document.querySelectorAll('.proj-label-text[data-mk]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`) || el.textContent;
   });
 }
 
 
+// ── Lightbox ─────────────────────────────────────────────
+const Lightbox = {
+  el:          null,
+  imgEl:       null,
+  captionEl:   null,
+  dotsEl:      null,
+  progressEl:  null,
+
+  images:      [],
+  project:     null,
+  currentIdx:  0,
+  autoTimer:   null,
+  INTERVAL:    3000,
+
+  init() {
+    this.el         = document.getElementById('lightbox');
+    this.imgEl      = document.getElementById('lightboxImg');
+    this.captionEl  = document.getElementById('lightboxCaption');
+    this.dotsEl     = document.getElementById('lightboxDots');
+    this.progressEl = document.getElementById('lbProgressBar');
+
+    const closeBtn  = document.getElementById('lightboxClose');
+    const prevBtn   = document.getElementById('lightboxPrev');
+    const nextBtn   = document.getElementById('lightboxNext');
+    const stage     = document.getElementById('lightboxStage');
+
+    if (!this.el) return;
+
+    closeBtn?.addEventListener('click', () => this.close());
+    prevBtn?.addEventListener('click',  () => this.prev());
+    nextBtn?.addEventListener('click',  () => this.next());
+
+    // Click outside (on stage background) to close
+    this.el.addEventListener('click', e => {
+      if (e.target === this.el) this.close();
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', e => {
+      if (!this.el || this.el.hidden) return;
+      if (e.key === 'Escape')      this.close();
+      if (e.key === 'ArrowLeft')   this.prev();
+      if (e.key === 'ArrowRight')  this.next();
+    });
+
+    // Touch swipe
+    let touchX = 0;
+    this.el.addEventListener('touchstart', e => {
+      touchX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    this.el.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].screenX - touchX;
+      if (Math.abs(dx) > 55) dx < 0 ? this.next() : this.prev();
+    }, { passive: true });
+  },
+
+  open(images, project, startIdx = 0) {
+    this.images  = images;
+    this.project = project;
+    this.buildDots();
+    this.show(startIdx, false); // no animation on open
+    this.el.hidden = false;
+    document.body.style.overflow = 'hidden';
+    this.startAuto();
+    document.getElementById('lightboxClose')?.focus();
+  },
+
+  close() {
+    this.stopAuto();
+    this.el.hidden = true;
+    this.imgEl.src = '';
+    document.body.style.overflow = '';
+  },
+
+  show(idx, animate = true) {
+    this.currentIdx = ((idx % this.images.length) + this.images.length) % this.images.length;
+
+    if (animate) {
+      this.imgEl.classList.remove('lb-img-anim');
+      void this.imgEl.offsetWidth;
+      this.imgEl.classList.add('lb-img-anim');
+    }
+
+    this.imgEl.src = this.images[this.currentIdx];
+    this.refreshCaption();
+    this.updateDots();
+    this.restartProgress();
+  },
+
+  refreshCaption() {
+    if (!this.project) return;
+    const langKey  = `desc${currentLang === 'mk' ? 'Mk' : 'En'}`;
+    const label    = this.project[`label${currentLang === 'mk' ? 'Mk' : 'En'}`];
+    const total    = this.images.length;
+    this.captionEl.textContent = `${label}  ·  ${this.currentIdx + 1} / ${total}`;
+  },
+
+  prev() {
+    this.stopAuto();
+    this.show(this.currentIdx - 1);
+    this.startAuto();
+  },
+
+  next() {
+    this.stopAuto();
+    this.show(this.currentIdx + 1);
+    this.startAuto();
+  },
+
+  buildDots() {
+    this.dotsEl.innerHTML = '';
+    this.images.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'lb-dot';
+      btn.setAttribute('aria-label', `Слика ${i + 1}`);
+      btn.addEventListener('click', () => {
+        this.stopAuto();
+        this.show(i);
+        this.startAuto();
+      });
+      this.dotsEl.appendChild(btn);
+    });
+  },
+
+  updateDots() {
+    const dots = this.dotsEl.querySelectorAll('.lb-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === this.currentIdx));
+    // Scroll active dot into view (for projects with many images)
+    const active = this.dotsEl.querySelector('.lb-dot.active');
+    active?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  },
+
+  restartProgress() {
+    if (!this.progressEl) return;
+    // Remove then re-add 'running' class to restart CSS animation
+    this.progressEl.classList.remove('running');
+    void this.progressEl.offsetWidth; // force reflow
+    this.progressEl.classList.add('running');
+  },
+
+  startAuto() {
+    this.stopAuto();
+    this.autoTimer = setInterval(() => {
+      this.show((this.currentIdx + 1) % this.images.length);
+    }, this.INTERVAL);
+  },
+
+  stopAuto() {
+    if (this.autoTimer) {
+      clearInterval(this.autoTimer);
+      this.autoTimer = null;
+    }
+    // Pause progress bar
+    if (this.progressEl) {
+      this.progressEl.classList.remove('running');
+    }
+  },
+};
+
+
 // ── Navbar ──────────────────────────────────────────────
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('navMenu');
-
+  const navbar  = document.getElementById('navbar');
+  const toggle  = document.getElementById('navToggle');
+  const menu    = document.getElementById('navMenu');
   if (!navbar) return;
 
-  // Scroll state
-  function onScroll() {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  }
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile toggle
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.classList.toggle('open');
-      menu.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen);
-    });
+  toggle?.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    menu?.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
 
-    // Close on link click
-    menu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+  menu?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
-  }
+  });
 
-  // Active link on scroll
+  // Active link highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
         navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
+        const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+        active?.classList.add('active');
       }
     });
-  }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
-
-  sections.forEach(s => observer.observe(s));
+  }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }).observe
+    && sections.forEach(s => new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          document.querySelector(`.nav-link[href="#${e.target.id}"]`)?.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }).observe(s));
 }
 
 
 // ── Parallax Hero ────────────────────────────────────────
 function initParallax() {
-  const heroBg = document.getElementById('heroBg');
-  const heroSection = document.getElementById('hero');
-  if (!heroBg || !heroSection) return;
-
-  // Check for reduced motion preference
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
+  const heroBg  = document.getElementById('heroBg');
+  const hero    = document.getElementById('hero');
+  if (!heroBg || !hero) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   let ticking = false;
-
-  function updateParallax() {
-    const scrollY = window.scrollY;
-    const heroHeight = heroSection.offsetHeight;
-
-    // Only apply parallax when hero is visible
-    if (scrollY < heroHeight) {
-      const progress = scrollY / heroHeight; // 0 → 1
-      const translateY = progress * 35; // Move up 35% of scroll
-      heroBg.style.transform = `translateY(${translateY}%)`;
-    }
-    ticking = false;
-  }
-
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      requestAnimationFrame(updateParallax);
+      requestAnimationFrame(() => {
+        const sy = window.scrollY;
+        if (sy < hero.offsetHeight) {
+          const p = sy / hero.offsetHeight;
+          heroBg.style.transform = `translateY(${p * 35}%)`;
+        }
+        ticking = false;
+      });
       ticking = true;
     }
   }, { passive: true });
+}
+
+
+// ── Gallery Filter ───────────────────────────────────────
+function initGalleryFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const grid = document.getElementById('galleryGrid');
+  if (!filterBtns.length || !grid) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      grid.querySelectorAll('.proj-card').forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
 }
 
 
@@ -154,278 +557,107 @@ function initParallax() {
 function initAnimations() {
   const targets = document.querySelectorAll(
     '.section-label, .section-title, .section-sub, .about-text, .about-images, ' +
-    '.stat-item, .service-card, .gallery-item, .contact-card, .contact-map, ' +
+    '.stat-item, .service-card, .contact-card, .contact-map, ' +
     '.footer-brand, .footer-links-group'
   );
-
   targets.forEach(el => el.classList.add('animate-in'));
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Stagger children in grids
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
-        observer.unobserve(entry.target);
-      }
+  // Stagger delays
+  document.querySelectorAll('.services-grid .service-card').forEach((el, i) => el.dataset.delay = i * 80);
+  document.querySelectorAll('.about-stats .stat-item').forEach((el, i) => el.dataset.delay = i * 100);
+  document.querySelectorAll('.footer-links-group').forEach((el, i) => el.dataset.delay = i * 60);
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const delay = parseInt(e.target.dataset.delay) || 0;
+      setTimeout(() => e.target.classList.add('visible'), delay);
+      obs.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  // Add stagger delays to grid items
-  document.querySelectorAll('.services-grid .service-card').forEach((el, i) => {
-    el.dataset.delay = i * 80;
-  });
-  document.querySelectorAll('.about-stats .stat-item').forEach((el, i) => {
-    el.dataset.delay = i * 100;
-  });
-  document.querySelectorAll('.footer-links-group').forEach((el, i) => {
-    el.dataset.delay = i * 60;
-  });
-
-  targets.forEach(el => observer.observe(el));
+  targets.forEach(el => obs.observe(el));
 }
 
 
-// ── Gallery Filter ───────────────────────────────────────
-function initGalleryFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.gallery-item');
-
-  if (!filterBtns.length) return;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      // Update active state
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      // Filter items
-      items.forEach(item => {
-        const category = item.dataset.category;
-        const show = filter === 'all' || category === filter;
-
-        if (show) {
-          item.classList.remove('hidden');
-          item.style.animation = 'fadeIn 0.4s ease forwards';
-        } else {
-          item.classList.add('hidden');
-        }
-      });
+// ── Gallery Cards Stagger Animation ─────────────────────
+function animateGalleryCards() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
     });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.proj-card').forEach((el, i) => {
+    el.classList.add('animate-in');
+    el.dataset.delay = (i % 4) * 60; // stagger within each row
+    obs.observe(el);
   });
 }
 
 
-// ── Lightbox ─────────────────────────────────────────────
-function initLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbCaption = document.getElementById('lightboxCaption');
-  const lbClose = document.getElementById('lightboxClose');
-  const lbPrev = document.getElementById('lightboxPrev');
-  const lbNext = document.getElementById('lightboxNext');
-
-  if (!lightbox) return;
-
-  let currentIndex = 0;
-  let images = [];
-
-  function buildImageList() {
-    images = Array.from(document.querySelectorAll('.gallery-zoom:not([data-src=""])'));
-  }
-
-  function openLightbox(idx) {
-    buildImageList();
-    currentIndex = idx;
-    const btn = images[currentIndex];
-    if (!btn) return;
-
-    const src = btn.dataset.src;
-    const caption = btn.getAttribute(`data-caption-${currentLang}`) || btn.dataset.captionMk || '';
-
-    lbImg.src = src;
-    lbImg.alt = caption;
-    lbCaption.textContent = caption;
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-    lbClose.focus();
-  }
-
-  function closeLightbox() {
-    lightbox.hidden = true;
-    lbImg.src = '';
-    document.body.style.overflow = '';
-  }
-
-  function prevImage() {
-    buildImageList();
-    // Only navigate visible items
-    const visible = images.filter(img => {
-      const item = img.closest('.gallery-item');
-      return item && !item.classList.contains('hidden');
-    });
-    const visIdx = visible.indexOf(images[currentIndex]);
-    const prev = visible[(visIdx - 1 + visible.length) % visible.length];
-    currentIndex = images.indexOf(prev);
-    openLightbox(currentIndex);
-  }
-
-  function nextImage() {
-    buildImageList();
-    const visible = images.filter(img => {
-      const item = img.closest('.gallery-item');
-      return item && !item.classList.contains('hidden');
-    });
-    const visIdx = visible.indexOf(images[currentIndex]);
-    const next = visible[(visIdx + 1) % visible.length];
-    currentIndex = images.indexOf(next);
-    openLightbox(currentIndex);
-  }
-
-  // Open on zoom button click
-  document.querySelectorAll('.gallery-zoom').forEach((btn, i) => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      buildImageList();
-      openLightbox(i);
-    });
-  });
-
-  // Open on item click (anywhere on image)
-  document.querySelectorAll('.gallery-item').forEach((item) => {
-    item.addEventListener('click', () => {
-      const btn = item.querySelector('.gallery-zoom');
-      if (!btn) return;
-      buildImageList();
-      const i = images.indexOf(btn);
-      openLightbox(i >= 0 ? i : 0);
-    });
-  });
-
-  lbClose?.addEventListener('click', closeLightbox);
-  lbPrev?.addEventListener('click', prevImage);
-  lbNext?.addEventListener('click', nextImage);
-
-  // Keyboard navigation
-  document.addEventListener('keydown', e => {
-    if (lightbox.hidden) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
-  });
-
-  // Click outside image to close
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Touch swipe support
-  let touchStartX = 0;
-  lightbox.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-  lightbox.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    if (Math.abs(dx) > 60) {
-      dx < 0 ? nextImage() : prevImage();
-    }
-  }, { passive: true });
-}
-
-
-// ── Counter Animation for Stats ──────────────────────────
+// ── Counter Animation ────────────────────────────────────
 function initCounters() {
-  const statNums = document.querySelectorAll('.stat-num');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const rawText = el.textContent.trim();
-      const numMatch = rawText.match(/^(\d+)/);
-      if (!numMatch) return;
-
-      const end = parseInt(numMatch[1]);
-      const suffix = rawText.slice(numMatch[1].length);
-      const duration = 1600;
-      const start = performance.now();
-
-      function step(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
-        const value = Math.floor(eased * end);
-        el.textContent = value + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const raw = el.textContent.trim();
+      const match = raw.match(/^(\d+)/);
+      if (!match) return;
+      const end    = parseInt(match[1]);
+      const suffix = raw.slice(match[1].length);
+      const dur    = 1600;
+      const start  = performance.now();
+      const step   = now => {
+        const t = Math.min((now - start) / dur, 1);
+        const v = Math.floor((1 - Math.pow(1 - t, 3)) * end);
+        el.textContent = v + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      };
       requestAnimationFrame(step);
-      observer.unobserve(el);
+      obs.unobserve(el);
     });
   }, { threshold: 0.5 });
-
-  statNums.forEach(el => observer.observe(el));
+  document.querySelectorAll('.stat-num').forEach(el => obs.observe(el));
 }
 
 
-// ── Brands ticker pause on hover ────────────────────────
+// ── Brand Ticker ─────────────────────────────────────────
 function initBrands() {
-  const track = document.querySelector('.brands-slide');
-  if (!track) return;
-  const parent = track.parentElement;
-  parent.addEventListener('mouseenter', () => {
-    track.style.animationPlayState = 'paused';
-  });
-  parent.addEventListener('mouseleave', () => {
-    track.style.animationPlayState = 'running';
-  });
+  const slide = document.querySelector('.brands-slide');
+  const track = slide?.parentElement;
+  if (!slide || !track) return;
+  track.addEventListener('mouseenter', () => slide.style.animationPlayState = 'paused');
+  track.addEventListener('mouseleave', () => slide.style.animationPlayState = 'running');
 }
 
 
-// ── Smooth scroll for anchor links ──────────────────────
+// ── Smooth Scroll ────────────────────────────────────────
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
 }
 
 
-// ── Gallery fade animation CSS ───────────────────────────
-function injectFadeIn() {
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.97); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-
-// ── Init All ─────────────────────────────────────────────
+// ── Init ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  injectFadeIn();
-  initLanguage();
+  // Build gallery FIRST so elements exist for other inits
+  buildGallery();
+  animateGalleryCards();
+
+  Lightbox.init();
+  initLanguage();   // after gallery so label-text elements exist
   initNavbar();
   initParallax();
   initAnimations();
   initGalleryFilter();
-  initLightbox();
   initCounters();
   initBrands();
   initSmoothScroll();
