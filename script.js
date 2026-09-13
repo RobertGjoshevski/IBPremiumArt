@@ -557,13 +557,14 @@ function initGalleryFilter() {
 function initAnimations() {
   const targets = document.querySelectorAll(
     '.section-label, .section-title, .section-sub, .about-text, .about-images, ' +
-    '.stat-item, .service-card, .contact-card, .contact-map, ' +
+    '.stat-item, .service-card, .faq-item, .contact-card, .contact-map, ' +
     '.footer-brand, .footer-links-group'
   );
   targets.forEach(el => el.classList.add('animate-in'));
 
   // Stagger delays
   document.querySelectorAll('.services-grid .service-card').forEach((el, i) => el.dataset.delay = i * 80);
+  document.querySelectorAll('.faq-grid .faq-item').forEach((el, i) => el.dataset.delay = i * 70);
   document.querySelectorAll('.about-stats .stat-item').forEach((el, i) => el.dataset.delay = i * 100);
   document.querySelectorAll('.footer-links-group').forEach((el, i) => el.dataset.delay = i * 60);
 

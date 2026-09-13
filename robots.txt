@@ -1,0 +1,40 @@
+# robots.txt for IB Premium Art (https://ibpremiumart.mk/)
+
+# Traditional Search Engines
+User-agent: *
+Allow: /
+
+# AI LLM Search Engines & AI Crawlers (Perplexity, ChatGPT, Claude, Gemini, Apple Intelligence, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap & LLM Knowledge Base Index
+Sitemap: https://ibpremiumart.mk/sitemap.xml
+LLMs-Txt: https://ibpremiumart.mk/llms.txt

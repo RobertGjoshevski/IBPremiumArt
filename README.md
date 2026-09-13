@@ -16,10 +16,14 @@ GitHub Pages: `https://[username].github.io/IbPremiumArt/`
 ## 📁 Project Structure
 
 ```
-IbPremiumArt/
-├── index.html          # Main website file
+ IbPremiumArt/
+├── index.html          # Main website file (with Schema.org JSON-LD & FAQ)
 ├── style.css           # Styles (dark luxury theme)
 ├── script.js           # JS: parallax, gallery, lightbox, i18n
+├── llms.txt            # Standardized AI LLM knowledge base file
+├── llms-full.txt       # Complete technical & service spec for AI search engines
+├── robots.txt          # Search engine & AI crawler access directives
+├── sitemap.xml         # XML Sitemap with image & language metadata
 ├── Assets/
 │   ├── logo.JPG
 │   ├── Home/           # Company building renovation photos
@@ -47,8 +51,11 @@ IbPremiumArt/
 
 - 🌙 Dark luxury design with gold accents
 - 🌍 Bilingual: Macedonian (default) + English
-- 📸 Parallax hero with project gallery
-- 🔍 Lightbox with keyboard & swipe navigation
+- 🤖 **AI LLM Search / GEO Optimized**: `llms.txt` and `llms-full.txt` knowledge bases for ChatGPT, Perplexity, Gemini, Bing, Claude, and Apple Intelligence
+- 🔍 **Google SEO Optimized**: Rich Schema.org JSON-LD (`GeneralContractor`, `LocalBusiness`, `FAQPage`), OpenGraph, Twitter Cards, `sitemap.xml`, `robots.txt`, and geo-targeting metadata
+- ❓ Interactive FAQ section with bilingual accordion
+- 📸 Parallax hero with project gallery & hover transformation
+- 🔍 Lightbox with auto-play, keyboard & swipe navigation
 - 📱 Fully responsive (mobile, tablet, desktop)
 - 🗺️ Google Maps integration
 - ⚡ Optimized for GitHub Pages (no build step required)
