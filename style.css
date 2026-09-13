@@ -790,7 +790,9 @@ button {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: var(--space-md);
+  grid-auto-rows: 250px;
+  gap: 1rem;
+  grid-auto-flow: dense; /* fill holes left by wide/tall cards */
 }
 
 .proj-card {
@@ -798,7 +800,7 @@ button {
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 4 / 3;
+  /* height comes from the grid rows — no aspect-ratio needed */
   background: var(--clr-surface-2);
   border: 1px solid var(--clr-border);
   transition: transform var(--dur-med) var(--ease),
@@ -806,7 +808,7 @@ button {
               border-color var(--dur-med) var(--ease);
 }
 .proj-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 16px 50px hsla(0,0%,0%,0.55);
   border-color: hsla(40,90%,58%,0.3);
 }
@@ -815,6 +817,7 @@ button {
 }
 .proj-card--featured {
   grid-column: span 2;
+  grid-row: span 2; /* fills a 2×2 square so no gap on the right */
 }
 
 /* Image */
@@ -1427,9 +1430,11 @@ button {
   }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
   }
   .proj-card--featured {
     grid-column: span 2;
+    grid-row: span 2;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1447,9 +1452,11 @@ button {
   }
   .gallery-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
   }
   .proj-card--featured {
     grid-column: span 1;
+    grid-row: span 1; /* single column — no special spanning */
   }
   .lightbox-prev, .lightbox-next {
     width: 38px;
