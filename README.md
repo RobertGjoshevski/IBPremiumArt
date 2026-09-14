@@ -42,6 +42,7 @@ GitHub Pages: `https://[username].github.io/IbPremiumArt/`
 
 ## 📞 Contact
 
+- **Phone:** +389 71 337 988
 - **Email:** Ibpremiumart@gmail.com
 - **Address:** Скопје, с. Стајковци, ул. 1 бр. 203А
 - **Instagram:** [@ib.premiumart](https://www.instagram.com/ib.premiumart/)
