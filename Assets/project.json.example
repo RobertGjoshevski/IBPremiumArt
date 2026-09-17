@@ -1,0 +1,8 @@
+{
+  "nameMk": "Име на проектот (македонски)",
+  "nameEn": "Project name (English)",
+  "count": 5,
+  "featured": false,
+  "descMk": "Краток опис (опционално)",
+  "descEn": "Short description (optional)"
+}

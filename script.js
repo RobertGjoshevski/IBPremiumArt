@@ -106,6 +106,42 @@ function buildImageList(project) {
   return urls;
 }
 
+// Load per-folder project.json (or name.txt) to override labels & image count
+async function loadProjectMeta(project) {
+  try {
+    const res = await fetch(`${project.folder}/project.json`);
+    if (res.ok) {
+      const meta = await res.json();
+      if (meta.nameMk) project.labelMk = meta.nameMk;
+      if (meta.nameEn) project.labelEn = meta.nameEn;
+      if (meta.name) {
+        project.labelMk = meta.name;
+        project.labelEn = meta.name;
+      }
+      if (meta.descMk) project.descMk = meta.descMk;
+      if (meta.descEn) project.descEn = meta.descEn;
+      if (typeof meta.count === 'number' && meta.count > 0) project.count = meta.count;
+      if (typeof meta.featured === 'boolean') project.featured = meta.featured;
+      return;
+    }
+  } catch (_e) { /* offline or missing file — keep defaults */ }
+
+  try {
+    const res = await fetch(`${project.folder}/name.txt`);
+    if (res.ok) {
+      const name = (await res.text()).trim();
+      if (name) {
+        project.labelMk = name;
+        project.labelEn = name;
+      }
+    }
+  } catch (_e) { /* keep defaults */ }
+}
+
+async function loadAllProjectMeta() {
+  await Promise.all(PROJECTS.map(loadProjectMeta));
+}
+
 
 // ── Language System ──────────────────────────────────────
 let currentLang = 'mk';
@@ -648,8 +684,9 @@ function initSmoothScroll() {
 
 
 // ── Init ─────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  // Build gallery FIRST so elements exist for other inits
+document.addEventListener('DOMContentLoaded', async () => {
+  // Load names/counts from each folder's project.json, then build gallery
+  await loadAllProjectMeta();
   buildGallery();
   animateGalleryCards();
 
