@@ -27,8 +27,7 @@ GitHub Pages: `https://[username].github.io/IbPremiumArt/`
 ├── Assets/
 │   ├── logo.JPG
 │   ├── Home/           # Company building renovation photos
-│   ├── Customer 1/     # Client project photos
-│   ├── 2/ – 18/        # Client project folders
+│   ├── 2/ – 19/        # Client project folders
 │   └── other/          # Additional project photos
 └── README.md
 ```

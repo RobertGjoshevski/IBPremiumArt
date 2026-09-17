@@ -19,10 +19,6 @@ const PROJECTS = [
     descMk:  'Реновација на нашата зграда – од темели до финален изглед',
     descEn:  'Renovation of our building – from foundations to final look' },
 
-  { id: 'c1',    folder: 'Assets/Customer 1',  count: 2,  category: 'project',
-    labelMk: 'Клиент #1',          labelEn: 'Client #1',
-    descMk:  'Клиентски проект',   descEn:  'Client project' },
-
   { id: 'p2',    folder: 'Assets/2',            count: 2,  category: 'project',
     labelMk: 'Проект #2',          labelEn: 'Project #2',
     descMk:  'Клиентски проект',   descEn:  'Client project' },
@@ -95,6 +91,10 @@ const PROJECTS = [
     labelMk: 'Финишерски работи',  labelEn: 'Finishing Works',
     descMk:  'Молерај, глетување и декоративни ефекти',
     descEn:  'Painting, plastering and decorative effects' },
+
+  { id: 'p19',   folder: 'Assets/19',           count: 2,  category: 'project',
+    labelMk: 'Проект #19',         labelEn: 'Project #19',
+    descMk:  'Клиентски проект',   descEn:  'Client project' },
 ];
 
 // Helper: build sorted image url list (0.jpg → last)
