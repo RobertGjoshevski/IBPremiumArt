@@ -106,6 +106,17 @@ function buildImageList(project) {
   return urls;
 }
 
+// Grid thumbnail index from project.json "cover" (default 0)
+function getGridCoverIndex(project, imageCount) {
+  const raw = project.cover;
+  let idx = 0;
+  if (raw !== undefined && raw !== null && raw !== '') {
+    const n = parseInt(String(raw), 10);
+    if (Number.isFinite(n) && n >= 0) idx = n;
+  }
+  return imageCount > 0 ? Math.min(idx, imageCount - 1) : 0;
+}
+
 // Load per-folder project.json (or name.txt) to override labels & image count
 async function loadProjectMeta(project) {
   try {
@@ -122,6 +133,11 @@ async function loadProjectMeta(project) {
       if (meta.descEn) project.descEn = meta.descEn;
       if (typeof meta.count === 'number' && meta.count > 0) project.count = meta.count;
       if (typeof meta.featured === 'boolean') project.featured = meta.featured;
+      if (meta.cover !== undefined && meta.cover !== null && meta.cover !== '') {
+        project.cover = meta.cover;
+      } else {
+        project.cover = 0;
+      }
       return;
     }
   } catch (_e) { /* offline or missing file — keep defaults */ }
@@ -210,7 +226,8 @@ function buildGallery() {
 
   PROJECTS.forEach(project => {
     const images = buildImageList(project);
-    const lastImg = images[images.length - 1];
+    const coverIdx = getGridCoverIndex(project, images.length);
+    const coverImg = images[coverIdx];
     const isFeatured = project.featured;
     const photoWord = project.count === 1 ? 'фото' : 'фотографии';
 
@@ -225,7 +242,7 @@ function buildGallery() {
     card.innerHTML = `
       <div class="proj-img-wrap">
         <img class="proj-img"
-             src="${lastImg}"
+             src="${coverImg}"
              alt="${project.labelMk}"
              loading="lazy" />
       </div>
@@ -251,7 +268,7 @@ function buildGallery() {
       <div class="proj-overlay">
         <div class="proj-dots-row">
           ${images.map((_, i) =>
-            `<span class="proj-dot${i === images.length - 1 ? ' active' : ''}"></span>`
+            `<span class="proj-dot${i === coverIdx ? ' active' : ''}"></span>`
           ).join('')}
         </div>
         <div class="proj-meta">
@@ -269,7 +286,7 @@ function buildGallery() {
     const img  = card.querySelector('.proj-img');
     const dots = card.querySelectorAll('.proj-dot');
     let cycleTimer   = null;
-    let currentIdx   = images.length - 1; // start on last
+    let currentIdx   = coverIdx;
 
     function setImg(idx, animate = true) {
       currentIdx = ((idx % images.length) + images.length) % images.length;
@@ -295,8 +312,8 @@ function buildGallery() {
     card.addEventListener('mouseleave', () => {
       clearInterval(cycleTimer);
       cycleTimer = null;
-      // Return to last image (final/finished result)
-      setImg(images.length - 1, true);
+      // Return to grid cover image
+      setImg(coverIdx, true);
     });
 
     // ── Open lightbox on click ────────────────────────────
