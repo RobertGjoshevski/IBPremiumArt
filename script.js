@@ -240,23 +240,22 @@ function buildGallery() {
         ${project.count}
       </div>
 
-      <!-- Overlay: shown on hover -->
+      <!-- Project name – always visible -->
+      <div class="proj-caption">
+        <span class="proj-label-text"
+              data-mk="${project.labelMk}"
+              data-en="${project.labelEn}">${project.labelMk}</span>
+      </div>
+
+      <!-- Overlay: extra info on hover -->
       <div class="proj-overlay">
-        <!-- Progress dots -->
         <div class="proj-dots-row">
           ${images.map((_, i) =>
             `<span class="proj-dot${i === images.length - 1 ? ' active' : ''}"></span>`
           ).join('')}
         </div>
-        <!-- Label row -->
         <div class="proj-meta">
-          <div>
-            <span class="proj-label-text"
-                  data-mk="${project.labelMk}"
-                  data-en="${project.labelEn}">${project.labelMk}</span>
-            <br>
-            <span class="proj-count-text">${project.count} ${photoWord}</span>
-          </div>
+          <span class="proj-count-text">${project.count} ${photoWord}</span>
           <button class="proj-expand-btn" aria-label="Отвори галерија">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
